@@ -109,6 +109,18 @@ function searchBookByTitle(title) {
 }
 
 
+function searchBookByAuthor(author) {
+  return new Promise((resolve, reject) => {
+      axios.get(`http://your_api_endpoint/books?author=${author}`)
+          .then(response => {
+              resolve(response.data);
+          })
+          .catch(error => {
+              reject(error);
+          });
+  });
+}
+
 
 
 
